@@ -1,0 +1,783 @@
+// Variabel warna
+$primary: #f7f7f7;
+$secondary: #cceabb;
+$tertiary: #b99470;
+
+// Reset CSS
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Font dan styling global
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+// Header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    transition: background-color 0.5s ease;
+    z-index: 2;
+
+    // Logo
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        padding: 0 10px;
+
+        h2 {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    }
+
+    // Menu navigasi
+    .nav-menu {
+        list-style-type: none;
+        display: flex;
+
+        button {
+            background-color: $secondary;
+            border: none;
+            border-radius: 15%;
+            width: 70px;
+            height: 30px;
+            margin-right: 30px;
+
+            a {
+                text-decoration: none;
+                list-style-type: none;
+                color: black;
+                line-height: 1.5 rem;
+                font-size: large;
+            }
+
+            &:hover {
+                background-color: #f7f7f7;
+                cursor: pointer;
+            }
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.5rem;
+                padding: 0 15px;
+                height: 100%;
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+
+            .dropdown {
+                display: none;
+                position: absolute;
+                background-color: #fff;
+                min-width: 120px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                top: 100%;
+                left: 0;
+                transition: transform 0.2 ease;
+
+                li {
+                    display: block;
+
+                    a {
+                        color: black;
+                        padding: 10px;
+                        text-decoration: none;
+                        display: block;
+
+                        &:hover {
+                            color: $secondary;
+                            transform: translateX(-2px) translateY(-2px);
+                        }
+                    }
+                }
+            }
+
+            &:hover .dropdown {
+                display: block;
+            }
+        }
+    }
+}
+
+// Hero section
+.hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../asset/img/bg.jpeg) no-repeat fixed bottom / cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+        color: #fff;
+        font-size: 60px;
+        line-height: 1;
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 26px;
+        font-weight: normal;
+        margin: 15px 0;
+    }
+
+    a {
+        background: $secondary;
+        color: black;
+        text-decoration: none;
+        font-size: 1.5rem;
+        border-radius: 3px;
+        line-height: 1;
+        padding: 10px 18px;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+
+        &:hover {
+            background: $tertiary;
+            color: $primary;
+        }
+    }
+}
+
+// Konten utama
+.content {
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+}
+
+// Efek aktif
+.active {
+    background-color: $secondary;
+    .logo h2 {
+        color: black;
+    }
+
+    .nav-menu {
+        button {
+            background-color: $tertiary;
+            color: white;
+
+            &:hover {
+                background-color: $primary;
+            }
+        }
+        li {
+            a {
+                color: black;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+// Tentang
+#tentang {
+    scroll-behavior: smooth;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 700px;
+
+    .about-image {
+        flex: 1;
+        padding-right: 50px;
+
+        img {
+            width: 600px;
+            height: auto;
+        }
+    }
+
+    .about-text {
+        flex: 2;
+        padding-left: 20px;
+        text-align: justify;
+
+        h1 {
+            color: $tertiary;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 16px;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 12px;
+            text-align: justify;
+        }
+    }
+}
+
+// Galeri
+#galeri {
+    width: 100%;
+    padding: 9rem 0;
+    scroll-behavior: smooth;
+}
+
+.galeri-container {
+    h1 {
+        margin-bottom: 30px;
+    }
+    width: 900px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    width: 100%;
+    min-height: 300px;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.image-box {
+    width: 22%;
+    height: 250px;
+    position: relative;
+    margin: 0 auto 20px auto;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.image-box:hover {
+    opacity: 0.5;
+}
+
+.image-box .toga {
+    position: absolute;
+    bottom: 85%;
+    right: 85%;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.image-box h2 {
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-box:hover h2 {
+    display: block;
+    opacity: 1;
+}
+
+.image-box:nth-child(odd) {
+    top: -20px;
+}
+
+.image-box:nth-child(even) {
+    bottom: -20px;
+}
+
+.galeri-info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+// Kontak
+.kontak {
+    #kontak {
+        text-align: center;
+        scroll-behavior: smooth;
+        margin-bottom: 20px;
+    }
+    .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .lokasi,
+        .email,
+        .nomor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+
+            i {
+                margin-bottom: 30px;
+                color: $tertiary;
+            }
+
+            h3 {
+                margin-bottom: 10px;
+            }
+        }
+        .nomor {
+            margin-right: 0;
+        }
+    }
+}
+
+// Footer
+footer {
+    background-color: $secondary;
+    padding: 50px 0;
+    text-align: center;
+    color: black;
+    font-size: small;
+
+    .social-icons {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                color: black;
+                text-decoration: none;
+                margin-bottom: 20px;
+
+                &:hover {
+                    color: $tertiary;
+                }
+            }
+        }
+    }
+}
+
+// Login
+.log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../asset/img/login.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.login {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 420px;
+    color: $primary;
+    padding: 30px 40px;
+
+    h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .input-box {
+        width: 100%;
+        height: 50px;
+        margin: 30px 0;
+        position: relative;
+
+        i {
+            position: absolute;
+            right: 20px;
+            top: 10%;
+            transform: translateY(50%);
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: $primary;
+
+            &::placeholder {
+                color: $primary;
+            }
+        }
+    }
+
+    .ingat-lupa {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14.5px;
+        margin: -15px 0 15px;
+
+        a {
+            color: $primary;
+            text-decoration: none;
+            margin-left: 100px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        label input {
+            accent-color: $primary;
+            margin-right: 3px;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        height: 45px;
+        border: none;
+        border-radius: 40px;
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+        background-color: $secondary;
+    }
+
+    .registerr {
+        font-size: 16.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+
+        p a {
+            color: $primary;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .back {
+        font-size: 16.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+
+        a {
+            color: $primary;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Registrasi
+.regis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../asset/img/register.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.register {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 400px;
+    color: $primary;
+    padding: 30px 40px;
+
+    h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .input-box {
+        width: 100%;
+        height: 50px;
+        margin: 30px 0;
+        position: relative;
+
+        i {
+            position: absolute;
+            right: 20px;
+            top: 10%;
+            transform: translateY(50%);
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: $primary;
+
+            &::placeholder {
+                color: $primary;
+            }
+        }
+    }
+
+    .btn {
+        width: 100%;
+        height: 45px;
+        margin-left: 10px;
+        background-color: $secondary;
+        padding: 15px 45px;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .logg {
+        font-size: 16.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+
+        p a {
+            color: $primary;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Fasilitas
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .post {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .text {
+            flex: 1;
+            font-weight: normal;
+            margin-right: 20px;
+        }
+
+        .foto {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.reservasi {
+    margin: 20px;
+    height: 490px;
+
+    .text {
+        margin-bottom: 20px;
+        p {
+            font-size: medium;
+        }
+    }
+
+    table {
+        margin-top: 10px;
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    }
+}
+
+.kelola_user {
+    margin: 20px;
+    height: 490px;
+
+    .text {
+        margin-bottom: 20px;
+        p {
+            font-size: medium;
+        }
+    }
+
+    table {
+        margin-top: 10px;
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    }
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    .pagination {
+        margin-top: 50px;
+        font-size: medium;
+    }
+
+    .keyword {
+        margin-top: 30px;
+    }
+}
+
+// dashboard
+.dashboard {
+    margin: 20px;
+    height: 490px;
+
+    .text {
+        margin-bottom: 20px;
+        p {
+            font-size: medium;
+        }
+    }
+
+    table {
+        margin-top: 10px;
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    }
+}
